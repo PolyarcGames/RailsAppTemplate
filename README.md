@@ -21,5 +21,4 @@ We use dotenv vault for managing secrets and environment variables.
 
 ## Contributing
 
-This repo contains the template, and also a blank rails app. You can use this app to test the migration by running
-`rails app:template LOCATION=./template.rb` locally. Don't check in any changes that the template makes. In this way we can verify that the template works as expected.
+Submit a pull request! It is expected that you've tried your changes in a new rails app before submitting your pull request.

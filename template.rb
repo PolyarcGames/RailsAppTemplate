@@ -58,6 +58,8 @@ after_bundle do
   RUBY
   end
 
+  FileUtils.rm_rf 'test'
+
   say "setting up UUIDs"
 
   generate "migration EnableUuidExtension"
