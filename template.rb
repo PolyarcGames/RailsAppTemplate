@@ -1,10 +1,8 @@
 # app_template.rb
 
 # Add gems or custom configurations if needed
-gem "pg" # PostgreSQL for UUIDs and database management
 
 gem_group :development, :test do
-  gem "debug", ">= 1.0.0"
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
@@ -56,5 +54,31 @@ after_bundle do
     # Use UUIDs as the default primary key type
     config.active_record.primary_key = :uuid
   RUBY
+  end
+
+  say "creating launch.json for debugging"
+
+  file '.vscode/launch.json' do <<~JSON
+    {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Debug Rails Server",
+          "type": "ruby_lsp",
+          "request": "launch",
+          "program": "rails server",
+        },
+        {
+          "name": "Debug RSpec Tests",
+          "type": "ruby_lsp",
+          "request": "launch",
+          "program": "rspec ${relativeFile}:${lineNumber}",
+        }
+      ]
+    }
+  JSON
   end
 end
