@@ -13,3 +13,8 @@
 - once it's installed run `rails new . -d postgresql --devcontainer -m TODO<put the template here>`. When asked if you want to override files, say `y`.
 
 That's it! you've got a fully configured Polyar Rails app!.
+
+### Secrets and Environment Variables
+
+We use dotenv vault for managing secrets and environment variables.
+- From the VSCode terminal run `npx dotenv-vault@latest new` Follow all the instructions and you should be good to go.
