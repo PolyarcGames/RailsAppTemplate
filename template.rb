@@ -36,14 +36,14 @@ after_bundle do
   generate "rspec:install"
 
   file 'spec/support/factory_bot.rb' do <<~RUBY
+    FactoryBot.definition_file_paths = [ "RSpec.root.join('spec', 'factories')" ]
+
     RSpec.configure do |config|
       config.include FactoryBot::Syntax::Methods
     end
   RUBY
   end
-  initializer 'factory_bot.rb', <<~RUBY
-    FactoryBot.definition_file_paths = ["RSpec.root.join('spec', 'factories')"]
-  RUBY
+
 
   inject_into_file 'spec/rails_helper.rb' do <<-'RUBY'
     require_relative 'support/factory_bot'
