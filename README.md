@@ -10,7 +10,7 @@
     - When asked what additional packages you want, select "npm node and yarn" option
     - decline, or choose defaults for the rest of the questions
 - Once VSCode reopen, open a terminal in VSCode. You'll notice that you're in a linux environment with ruby installed. From here run `gem install rails` to install the latest version of Rails
-- once it's installed run `rails new . -d postgresql --devcontainer -m TODO<put the template here>`. When asked if you want to override files, say `y`.
+- once it's installed run `rails new . -d postgresql --devcontainer -m http://example.com/template.rb`. When asked if you want to override files, say `y`.
 
 That's it! you've got a fully configured Polyar Rails app!.
 
@@ -18,3 +18,8 @@ That's it! you've got a fully configured Polyar Rails app!.
 
 We use dotenv vault for managing secrets and environment variables.
 - From the VSCode terminal run `npx dotenv-vault@latest new` Follow all the instructions and you should be good to go.
+
+## Contributing
+
+This repo contains the template, and also a blank rails app. You can use this app to test the migration by running
+`rails app:template LOCATION=./template.rb` locally. Don't check in any changes that the template makes. In this way we can verify that the template works as expected.
