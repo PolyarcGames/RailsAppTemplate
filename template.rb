@@ -104,5 +104,9 @@ after_bundle do
   JSON
   end
 
+  say 'cleaning up'
   run "rubocop -A"
+  run "git config core.fileMode false"
+  run "git add ."
+  run "git commit -m 'Initial commit'"
 end
