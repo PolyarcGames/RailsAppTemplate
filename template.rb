@@ -28,7 +28,7 @@ after_bundle do
         "redhat.vscode-yaml"
 			]
 		}
-	}
+	},
   JSON
   end
 
@@ -52,7 +52,7 @@ after_bundle do
 
   inject_into_file 'config/application.rb', after: "class Application < Rails::Application\n" do <<-'RUBY'
     config.generators do |g|
-      g.test_framework :rspec,
+      g.test_framework :rspec
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
   RUBY
@@ -101,4 +101,6 @@ after_bundle do
     }
   JSON
   end
+
+  run "rubocop -A"
 end
