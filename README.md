@@ -10,7 +10,7 @@
     - When asked what additional packages you want, select "npm node and yarn" option
     - decline, or choose defaults for the rest of the questions
 - Once VSCode reopen, open a terminal in VSCode. You'll notice that you're in a linux environment with ruby installed. From here run `gem install rails` to install the latest version of Rails
-- once it's installed run `rails new . -d postgresql --devcontainer -m http://example.com/template.rb`. When asked if you want to override files, say `y`.
+- once it's installed run `rails new . -d postgresql --devcontainer -m https://raw.githubusercontent.com/PolyarcGames/RailsAppTemplate/refs/heads/main/template.rb`. When asked if you want to override files, say `y`.
 
 That's it! you've got a fully configured Polyar Rails app!.
 
